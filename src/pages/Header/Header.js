@@ -13,6 +13,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect className='header' expand="lg" variant="dark">
             <Container>
+                {/* <div> <img src="../../assets/image/image.jpg" alt="" /></div> */}
                 <h2 className='logo me-4'>Bullet Javascript</h2>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -27,9 +28,9 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                     </Nav>
-                    <Nav >
+                    <Nav  >
                         <Link className='link' to='/home'>Home</Link>
-                        <Link className='link' to='/'>Course</Link>
+                        {/* <Link className='link' to='/'>Course</Link> */}
                         <Link className='link' to='/'>Blog</Link>
                         <Link className='link' to='/login'>Log In</Link>
                         <Link className='link' to='/register'>Register</Link>
