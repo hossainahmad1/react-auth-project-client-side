@@ -1,0 +1,22 @@
+.login-page {
+    background-color: darkgoldenrod;
+    color: beige;
+    width: 40%;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.field-items {
+    margin-left: 10px;
+    padding: 18px;
+}
+
+.login-header {
+    font-weight: 700;
+    color: chocolate;
+}
+.toogle-btn{
+    text-decoration: none;
+    color: lawngreen;
+}

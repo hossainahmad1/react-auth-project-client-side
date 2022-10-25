@@ -1,0 +1,32 @@
+.header {
+    padding-bottom: 10px;
+    background-color: rgb(6, 6, 147);
+}
+
+.link {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: coral;
+    color: rgb(235, 235, 223);
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.link:hover {
+    background-color: forestgreen;
+    color: white;
+}
+
+.logo {
+    color: rgb(243, 78, 18);
+    font-weight: 800;
+}
+
+/* .login {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: coral;
+    color: beige;
+    border-radius: 10px;
+    margin-left: 10px;
+} */
