@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import './Register.css'
 
 const Register = () => {
@@ -44,8 +45,12 @@ const Register = () => {
                     </Button> <br />
                 </Form>
                 <Button className='btn-submit' variant="primary" type="submit">
-                    Register With Google
+                    <FaGoogle></FaGoogle>  Register With Google
                 </Button>
+                <Button className='btn-submit' variant="primary" type="submit">
+                    <FaGithub></FaGithub>  Register With Github
+                </Button>
+
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
 import LeftSideRoute from '../leftSideRoute/LeftSideRoute';
 import RightSideRoute from '../RightSideRoute/RightSideRoute';
 
@@ -12,6 +13,7 @@ const Course = () => {
                 </Col>
                 <Col lg='9'>
                     <RightSideRoute></RightSideRoute>
+                    <Outlet></Outlet>
                 </Col>
             </Row>
         </Container>
