@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
-
+import logo from '../../assets/image/image.jpg'
 
 
 
@@ -13,12 +13,12 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect className='header' expand="lg" variant="dark">
             <Container>
-                {/* <div> <img src="../../assets/image/image.jpg" alt="" /></div> */}
-                <h2 className='logo me-4'>Bullet Javascript</h2>
+                <img className='icon' src={logo} alt="" />
+                <h2 className='logo me-3'>Bullet Javascript</h2>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Form className="d-flex">
+                        <Form className="d-flex ms-4">
                             <Form.Control
                                 type="search"
                                 placeholder="Search"
@@ -28,13 +28,12 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                     </Nav>
-                    <Nav  >
+                    <Nav>
                         <Link className='link' to='/home'>Home</Link>
-                        {/* <Link className='link' to='/'>Course</Link> */}
-                        <Link className='link' to='/'>Blog</Link>
+                        <Link className='link' to='/course'>Course</Link>
+                        <Link className='link' to='/blog'>Blog</Link>
                         <Link className='link' to='/login'>Log In</Link>
                         <Link className='link' to='/register'>Register</Link>
-
 
                         {/* 
                         {

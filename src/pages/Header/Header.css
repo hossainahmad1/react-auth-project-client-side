@@ -22,11 +22,9 @@
     font-weight: 800;
 }
 
-/* .login {
-    text-decoration: none;
-    padding: 8px 15px;
-    background-color: coral;
-    color: beige;
-    border-radius: 10px;
-    margin-left: 10px;
-} */
+.icon {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    border-radius: 8px;
+}
