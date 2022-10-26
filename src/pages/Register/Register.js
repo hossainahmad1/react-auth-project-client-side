@@ -44,7 +44,6 @@ const Register = () => {
             .catch(error => {
                 console.error(error)
                 setPassError(error.message);
-                
             })
     }
 

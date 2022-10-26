@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,6 +9,7 @@ import './Login.css';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext)
+    const [loginError, setLoginError] = useState('')
     // console.log(signIn)
 
     const handleSubmit = event => {
@@ -17,13 +19,32 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            setLoginError('Please provide al least two uppercase')
+            return;
+        }
+        if (password.length < 6) {
+            setLoginError('Please provide al least six character');
+            return;
+        }
+        if (!/(?=.*[!@#$%*])/.test(password)) {
+            setLoginError('Please provide a special character');
+            return;
+        }
+        setLoginError('');
+
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 form.reset()
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                setLoginError(error.message);
+
+            })
     }
 
 
@@ -43,6 +64,8 @@ const Login = () => {
                         <Form.Control name='password' type="password" placeholder="Password" required />
                     </Form.Group>
                     <p>New to account? <Link className='toogle-btn' to='/register'>Register Now</Link></p>
+
+                    <p className='text-danger'>{loginError}</p>
                     <Button variant="primary" type="submit">
                         Login
                     </Button>
