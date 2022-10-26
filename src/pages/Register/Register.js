@@ -3,8 +3,12 @@ import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import './Register.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+    console.log(createUser)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -13,7 +17,14 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password);
+        // console.log(name, photoURL, email, password);
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                form.reset()
+            })
+            .catch(error => console.error(error))
     }
 
 

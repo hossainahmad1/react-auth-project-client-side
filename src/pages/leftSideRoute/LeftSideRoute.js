@@ -18,7 +18,7 @@ const LeftSideRoute = () => {
             <div>
                 {
                     categories.map(category => <p key={category.id}>
-                        <Link to={`/rightsideroute/${category.id}`}>{category.name}</Link>
+                        <Link to={`/categories/${category.id}`}>{category.name}</Link>
                     </p>)
                 }
             </div>
