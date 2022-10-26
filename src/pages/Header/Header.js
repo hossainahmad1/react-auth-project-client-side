@@ -41,12 +41,7 @@ const Header = () => {
                         <Link className='link' to='/home'>Home</Link>
                         <Link className='link' to='/course'>Course</Link>
                         <Link className='link' to='/blog'>Blog</Link>
-                        <Nav.Link >
-                            {user?.photoURL ?
-                                <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL} ></Image>
-                                : <FaUser></FaUser>
-                            }
-                        </Nav.Link>
+
                         {/* <Link className='link' to='/login'>Log In</Link>
                         <Link className='link' to='/register'>Register</Link> */}
 
@@ -59,6 +54,12 @@ const Header = () => {
                                     <Link className='link' to='/register'>Register</Link>
                                 </>
                         }
+                        <Nav.Link >
+                            {user?.photoURL ?
+                                <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL} ></Image>
+                                : <FaUser></FaUser>
+                            }
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
