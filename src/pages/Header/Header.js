@@ -3,11 +3,19 @@ import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import logo from '../../assets/image/image.jpg'
+import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 
 
 
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
 
     return (
@@ -32,19 +40,19 @@ const Header = () => {
                         <Link className='link' to='/home'>Home</Link>
                         <Link className='link' to='/course'>Course</Link>
                         <Link className='link' to='/blog'>Blog</Link>
-                        <Link className='link' to='/login'>Log In</Link>
-                        <Link className='link' to='/register'>Register</Link>
+                        {/* <Link className='link' to='/login'>Log In</Link>
+                        <Link className='link' to='/register'>Register</Link> */}
 
-                        {/* 
                         {
                             user?.uid ?
-                                <button onClick={handleSignOut} className='login'>SignOut</button>
+                                <button onClick={handleSignOut} className='link'>SignOut</button>
                                 :
                                 <>
-                                    <Link className='login' to='/login'>Login</Link>
-                                    <Link className='login' to='/register'>Register</Link>
+                                    <Link className='link' to='/login'>Login</Link>
+                                    <Link className='link' to='/register'>Register</Link>
                                 </>
-                        } */}
+                        }
+
 
                     </Nav>
                 </Navbar.Collapse>
