@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 import './News.css'
 
 
@@ -17,8 +18,12 @@ const News = ({ oneNews }) => {
                     <Card.Text>
                         {details}
                     </Card.Text>
-                    <Button className='me-5' variant="primary">Back to Course</Button>
-                    <Button className='ms-4' variant="primary">Checkout</Button>
+                    <Link to='/course'>
+                        <Button className='me-5' variant="primary">Back to Course</Button>
+                    </Link>
+                    <Link to='/checkout'>
+                        <Button className='ms-4' variant="primary">Checkout</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div >

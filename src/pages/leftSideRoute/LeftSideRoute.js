@@ -14,7 +14,6 @@ const LeftSideRoute = () => {
     }, [])
     return (
         <div>
-            <h4>this is a LeftSideRoute {categories.length} </h4>
             <div className='laftSide'>
                 {
                     categories.map(category => <h4 key={category.id}>

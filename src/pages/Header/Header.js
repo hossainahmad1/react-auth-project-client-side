@@ -27,20 +27,9 @@ const Header = () => {
         <Navbar collapseOnSelect className='header' expand="lg" variant="dark">
             <Container>
                 <img className='icon' src={logo} alt="" />
-                <h2 className='logo me-3'>Bullet Javascript</h2>
+                <h2 className=' me-3'>Bullet Javascript</h2>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    {/* <Nav className="me-auto">
-                        <Form className="d-flex ms-4">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
-                    </Nav> */}
 
                     <Nav className='ms-auto toggle'>
                         <Button className='me-2' variant="dark" size="lg" active>
@@ -56,8 +45,6 @@ const Header = () => {
                         <Link className='link' to='/home'>Home</Link>
                         <Link className='link' to='/course'>Course</Link>
                         <Link className='link' to='/blog'>Blog</Link>
-
-
                         {
                             user?.uid ?
                                 <button onClick={handleSignOut} className='link'>SignOut</button>

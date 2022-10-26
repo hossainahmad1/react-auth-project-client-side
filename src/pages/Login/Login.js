@@ -3,14 +3,20 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 import './Login.css';
+
+
+
 
 const Login = () => {
     const { signIn } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
-    // console.log(signIn)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -19,26 +25,26 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
-        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-            setLoginError('Please provide al least two uppercase')
-            return;
-        }
+        // if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+        //     setLoginError('Please provide al least two uppercase')
+        //     return;
+        // }
         if (password.length < 6) {
             setLoginError('Please provide al least six character');
             return;
         }
-        if (!/(?=.*[!@#$%*])/.test(password)) {
-            setLoginError('Please provide a special character');
-            return;
-        }
+        // if (!/(?=.*[!@#$%*])/.test(password)) {
+        //     setLoginError('Please provide a special character');
+        //     return;
+        // }
         setLoginError('');
-
 
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 form.reset()
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);

@@ -7,7 +7,6 @@ const Categories = () => {
     console.log(news)
     return (
         <div>
-            <h4>this si categories has news {news.length}</h4>
             <div>
                 {
                     news.map(oneNews => <News

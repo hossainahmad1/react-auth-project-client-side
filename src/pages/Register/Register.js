@@ -24,18 +24,18 @@ const Register = () => {
         const password = form.password.value;
         // console.log(name, photoURL, email, password);
 
-        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-            setPassError('Please provide al least two uppercase')
-            return;
-        }
+        // if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+        //     setPassError('Please provide al least two uppercase')
+        //     return;
+        // }
         if (password.length < 6) {
             setPassError('Please provide al least six character');
             return;
         }
-        if (!/(?=.*[!@#$%*])/.test(password)) {
-            setPassError('Please provide a special character');
-            return;
-        }
+        // if (!/(?=.*[!@#$%*])/.test(password)) {
+        //     setPassError('Please provide a special character');
+        //     return;
+        // }
         setPassError('');
 
 
