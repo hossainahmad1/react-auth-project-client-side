@@ -1,4 +1,8 @@
 .leftSide {
+    margin-top: 30px;
+}
+.leftSide a {
     text-decoration: none;
-    color: brown;
+    font-weight: 700;
+    color: black;
 }

@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 
-
-
-
 const DetailsCart = ({ oneData }) => {
 
     const { id, img, name, details } = oneData;

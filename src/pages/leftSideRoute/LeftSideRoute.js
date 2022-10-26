@@ -13,14 +13,12 @@ const LeftSideRoute = () => {
             .then(data => setCategories(data));
     }, [])
     return (
-        <div>
-            <div className='laftSide'>
-                {
-                    categories.map(category => <h4 key={category.id}>
-                        <Link to={`/categories/${category.id}`}>{category.name}</Link>
-                    </h4>)
-                }
-            </div>
+        <div className='leftSide'>
+            {
+                categories.map(category => <h4 key={category.id}>
+                    <Link to={`/categories/${category.id}`}>{category.name}</Link>
+                </h4>)
+            }
         </div>
     );
 };

@@ -9,7 +9,6 @@ import './Login.css';
 
 
 
-
 const Login = () => {
     const { signIn } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
@@ -75,7 +74,6 @@ const Login = () => {
                     <Button variant="primary" type="submit">
                         Login
                     </Button>
-                    {/* {user?.email && <span>welcome {user?.email}</span>} */}
                 </Form>
             </div>
         </div>

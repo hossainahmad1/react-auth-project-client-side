@@ -5,15 +5,15 @@
 
 .link {
     text-decoration: none;
-    padding: 8px 15px;
-    background-color: coral;
-    color: rgb(235, 235, 223);
+    padding: 8px 18px;
+    background-color: #6ca12b;
+    color: whitesmoke;
     border-radius: 10px;
     margin-left: 15px;
 }
 
 .link:hover {
-    background-color: forestgreen;
+    background-color: #F73859;
     color: white;
 }
 

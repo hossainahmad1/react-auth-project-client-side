@@ -5,7 +5,7 @@ import './Main.css'
 
 const Main = () => {
     return (
-        <div className='body'>
+        <div>
             <Header></Header>
             <Outlet></Outlet>
         </div>

@@ -16,7 +16,6 @@ const RightSideRoute = () => {
 
     return (
         <div>
-            <h4>this is a rightsideRoute has news {data.length}  </h4>
             <div className='cart-design'>
                 {
                     data.map(oneData => <DetailsCart
