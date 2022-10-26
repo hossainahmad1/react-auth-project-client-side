@@ -1,9 +1,29 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import DetailsCart from '../DetailsCart/DetailsCart';
+
 
 const RightSideRoute = () => {
+
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/news')
+            .then(res => res.json())
+            .then(data => setData(data));
+    }, [])
+
     return (
         <div>
-            <h4>this is a rightsideRoute</h4>
+            <h4>this is a rightsideRoute has news {data.length}  </h4>
+            <div>
+                {
+                    data.map(oneData => <DetailsCart
+                        key={oneData.id}
+                        oneData={oneData}
+                    ></DetailsCart>)
+                }
+            </div>
         </div>
     );
 };

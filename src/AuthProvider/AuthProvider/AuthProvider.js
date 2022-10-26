@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 import { useState } from 'react';
 
@@ -15,7 +15,8 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({});
 
-    const googleProvider = new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -28,6 +29,9 @@ const AuthProvider = ({ children }) => {
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider)
     }
+    const signInWithGithub = () => {
+        return signInWithPopup(auth, githubProvider)
+    }
 
     const logOut = () => {
         return signOut(auth)
@@ -36,7 +40,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currnetUser => {
             setUser(currnetUser)
-            console.log(currnetUser)
+            // console.log(currnetUser)
         })
         return () => {
             unsubscribe()
@@ -46,7 +50,10 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const auhtInfo = { user, setUser, createUser, signIn, logOut,signInWithGoogle }
+    const auhtInfo = { user, setUser,
+         createUser, signIn,
+          logOut, signInWithGoogle,
+          signInWithGithub }
 
     return (
         <div>

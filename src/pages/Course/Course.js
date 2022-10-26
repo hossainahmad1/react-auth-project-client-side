@@ -13,7 +13,6 @@ const Course = () => {
                 </Col>
                 <Col lg='9'>
                     <RightSideRoute></RightSideRoute>
-                    <Outlet></Outlet>
                 </Col>
             </Row>
         </Container>

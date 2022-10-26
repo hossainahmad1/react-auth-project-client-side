@@ -7,6 +7,7 @@ import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import News from "../../pages/News/News/News";
 import Register from "../../pages/Register/Register";
+import RightSideRoute from "../../pages/RightSideRoute/RightSideRoute";
 
 
 export const router = createBrowserRouter([
@@ -44,8 +45,9 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
             },
             {
-                path: '/news/:id',
-                element: <News></News>
+                path: '/rightsideroute',
+                element: <RightSideRoute></RightSideRoute>,
+                loader: () => fetch('http://localhost:5000/news')
             }
         ]
     }

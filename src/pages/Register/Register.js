@@ -6,8 +6,12 @@ import './Register.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 
+
+
+
+
 const Register = () => {
-    const { createUser, signInWithGoogle } = useContext(AuthContext)
+    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
     const [passError, setPassError] = useState('')
     // console.log(createUser)
 
@@ -58,6 +62,15 @@ const Register = () => {
             })
     }
 
+    const handleSignInGithub = () => {
+        signInWithGithub()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
+
+    }
 
 
 
@@ -92,7 +105,7 @@ const Register = () => {
                 <Button onClick={handleSignInGoogle} className='btn-submit' variant="primary" type="submit">
                     <FaGoogle></FaGoogle>  Register With Google
                 </Button>
-                <Button className='btn-submit' variant="primary" type="submit">
+                <Button onClick={handleSignInGithub} className='btn-submit' variant="primary" type="submit">
                     <FaGithub></FaGithub>  Register With Github
                 </Button>
 

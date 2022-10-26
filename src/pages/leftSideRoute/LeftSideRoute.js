@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const LeftSideRoute = () => {
     const [categories, setCategories] = useState([]);
 
-
     useEffect(() => {
         fetch('http://localhost:5000/categories')
             .then(res => res.json())
