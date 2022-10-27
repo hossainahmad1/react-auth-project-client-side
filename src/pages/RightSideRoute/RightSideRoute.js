@@ -6,8 +6,8 @@ import './RightSideRoute.css'
 
 
 const RightSideRoute = () => {
-
     const [data, setData] = useState([])
+    
     useEffect(() => {
         fetch('http://localhost:5000/news')
             .then(res => res.json())

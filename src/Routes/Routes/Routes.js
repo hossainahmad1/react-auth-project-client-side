@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
 import Categories from "../../pages/Categories/Categories/Categories";
 import CheckOut from "../../pages/CheckOut/CheckOut";
+import CheckOutDetails from "../../pages/CheckOutDetails/CheckOutDetails";
 import Course from "../../pages/Course/Course";
 import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home";
@@ -64,7 +65,12 @@ export const router = createBrowserRouter([
                 path: '/rightsideroute',
                 element: <RightSideRoute></RightSideRoute>,
                 loader: () => fetch('http://localhost:5000/news')
-            }
+            },
+            // {
+            //     path: '/checkoutdetails/:id',
+            //     element: <CheckOutDetails></CheckOutDetails>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+            // }
         ]
     }
 ])
