@@ -11,9 +11,7 @@ import News from "../../pages/News/News/News";
 import Register from "../../pages/Register/Register";
 import RightSideRoute from "../../pages/RightSideRoute/RightSideRoute";
 import PDFFile from "../../PDFFile/PDFFile";
-import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
-import DarkMode from "../../DarkMode/DarkMode";
-
+import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute"
 
 
 
