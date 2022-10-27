@@ -7,16 +7,16 @@ import './RightSideRoute.css'
 
 const RightSideRoute = () => {
     const [data, setData] = useState([])
-    
+
     useEffect(() => {
-        fetch('http://localhost:5000/news')
+        fetch('https://javascript-server-project.vercel.app/news')
             .then(res => res.json())
             .then(data => setData(data));
     }, [])
 
     return (
         <div>
-            <div className= ' cart-design'>
+            <div className=' cart-design'>
                 {
                     data.map(oneData => <DetailsCart
                         key={oneData.id}

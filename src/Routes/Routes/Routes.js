@@ -3,7 +3,6 @@ import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
 import Categories from "../../pages/Categories/Categories/Categories";
 import CheckOut from "../../pages/CheckOut/CheckOut";
-import CheckOutDetails from "../../pages/CheckOutDetails/CheckOutDetails";
 import Course from "../../pages/Course/Course";
 import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home";
@@ -11,7 +10,9 @@ import Login from "../../pages/Login/Login";
 import News from "../../pages/News/News/News";
 import Register from "../../pages/Register/Register";
 import RightSideRoute from "../../pages/RightSideRoute/RightSideRoute";
+import PDFFile from "../../PDFFile/PDFFile";
 import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
+import DarkMode from "../../DarkMode/DarkMode";
 
 
 
@@ -47,28 +48,36 @@ export const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/pdffile',
+                element: <PDFFile></PDFFile>
+            },
+            {
+                path: '/darkmode',
+                element: <DarkMode></DarkMode>
+            },
+            {
                 path: '/checkout',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
             {
                 path: '/categories/:id',
                 element: <Categories></Categories>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://javascript-server-project.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/news/:id',
                 element: <News></News>,
-                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader: ({ params }) => fetch(`https://javascript-server-project.vercel.app/news/${params.id}`)
             },
             {
                 path: '/rightsideroute',
                 element: <RightSideRoute></RightSideRoute>,
-                loader: () => fetch('http://localhost:5000/news')
+                loader: () => fetch('https://javascript-server-project.vercel.app/news')
             },
             {
-                path: '/checkout',
+                path: '/checkout/:id',
                 element: <CheckOut></CheckOut>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://javascript-server-project.vercel.app/categories/${params.id}`)
             }
         ]
     }

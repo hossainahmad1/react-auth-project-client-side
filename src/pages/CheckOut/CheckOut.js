@@ -5,10 +5,10 @@ import CheckOutDetails from '../CheckOutDetails/CheckOutDetails';
 
 const CheckOut = () => {
     const [items, setItems] = useState([]);
-    console.log(items)
+    // console.log(items)
 
     useEffect(() => {
-        fetch('http://localhost:5000/news')
+        fetch('https://javascript-server-project.vercel.app/news')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

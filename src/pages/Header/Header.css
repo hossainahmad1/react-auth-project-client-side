@@ -32,3 +32,11 @@
 .toggle {
     margin-right: 100px;
 }
+
+.dark-theme {
+    background-color: rgb(28, 26, 26);
+}
+
+.light-theme {
+    background-color: white;
+}

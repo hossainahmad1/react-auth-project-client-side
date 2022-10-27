@@ -5,22 +5,50 @@ import { FaUser } from "react-icons/fa";
 import './Header.css'
 import logo from '../../assets/image/image.jpg'
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
+import { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 
+
+
+
+const GlobalStyles = createGlobalStyle`
+button{
+    backgroun-color: ${(props) => props.theme.button};
+}
+`;
+
+const StyledApp = styled.div`
+ color: ${(props) => props.theme.fontColor}
+`;
+
+
+const lightTheme = {
+    button: '#fff',
+    fontColor: '#000'
+}
+
+const darkTheme = {
+    button: '#000',
+    fontColor: '#fff'
+}
 
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
+    // toggle theme
+    const [theme, setTheme] = useState('dark');
+
+    const toggleTheme = () => {
+        theme === 'light' ? setTheme('dark') : setTheme('light');
+    }
 
     const handleSignOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error(error))
     }
-
-    // const togglebtnDark = () => {
-
-    // }
 
 
     return (
@@ -32,12 +60,14 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className='ms-auto toggle'>
-                        <Button className='me-2' variant="dark" size="lg" active>
-                            Dark
-                        </Button>
-                        <Button variant="light" size="lg" active>
-                            Light
-                        </Button>
+                        <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
+                            <GlobalStyles />
+                            <StyledApp>
+                                <Button onClick={toggleTheme} className='me-2' variant="dark" size="lg" active>
+                                    Toggle Mode
+                                </Button>
+                            </StyledApp>
+                        </ThemeProvider>
                     </Nav>
 
 

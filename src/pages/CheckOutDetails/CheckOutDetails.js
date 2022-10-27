@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import './CheckOutDetails.css'
 
 const CheckOutDetails = ({ item }) => {
-    const { author, name, img, details } = item;
+    const {id, author, name, img, details } = item;
     console.log(item)
 
 
@@ -20,7 +20,10 @@ const CheckOutDetails = ({ item }) => {
 
                     <div className='cart-footer'>
                         <Link to='/'>
-                            <Button className='ms-2' variant="primary">Back To Home</Button>
+                            <Button className='' variant="primary">Back To Home</Button>
+                        </Link>
+                        <Link to='/pdffile'>
+                            <Button className='' variant="primary">Download PDF</Button>
                         </Link>
                         <div>
                             <Image className='images-design' src={author} alt="" />
