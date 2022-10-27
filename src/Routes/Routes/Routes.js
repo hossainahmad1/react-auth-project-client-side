@@ -52,10 +52,6 @@ export const router = createBrowserRouter([
                 element: <PDFFile></PDFFile>
             },
             {
-                path: '/darkmode',
-                element: <DarkMode></DarkMode>
-            },
-            {
                 path: '/checkout',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
