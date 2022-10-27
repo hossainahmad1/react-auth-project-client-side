@@ -1,8 +1,20 @@
 .leftSide {
     margin-top: 30px;
 }
+
 .leftSide a {
     text-decoration: none;
     font-weight: 700;
     color: black;
+}
+
+@media screen and (min-width:768px) {
+    .leftSide {
+        text-align: center;
+    }
+}
+@media screen and (min-width:576px) and (max-width:767px) {
+    .leftSide {
+        text-align: center;
+    }
 }

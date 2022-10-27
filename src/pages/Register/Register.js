@@ -5,15 +5,17 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import './Register.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
+import { useRef } from 'react';
 
 
 
 
 
 const Register = () => {
-    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
-    const [passError, setPassError] = useState('')
-    // console.log(createUser)
+    const { updateUser, createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
+    const [passError, setPassError] = useState('');
+
+
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -22,7 +24,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, photoURL, email, password);
+
 
         // if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
         //     setPassError('Please provide al least two uppercase')
@@ -38,18 +40,33 @@ const Register = () => {
         // }
         setPassError('');
 
-
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 form.reset()
+                handleUpdateUser(name, photoURL)
             })
             .catch(error => {
                 console.error(error)
                 setPassError(error.message);
             })
     }
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUser(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+
+
+
+
 
     const handleSignInGoogle = () => {
         signInWithGoogle()

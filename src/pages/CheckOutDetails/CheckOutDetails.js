@@ -1,24 +1,31 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Card, Image } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
+import './CheckOutDetails.css'
 
 const CheckOutDetails = ({ item }) => {
     const { author, name, img, details } = item;
     console.log(item)
 
+
     return (
-        <div className='details-cart'>
+        <div className='cart-details'>
             <Card style={{ width: '350px' }}>
-                <Card.Img variant="top" src={img} />
+                <Card.Img className='full-photo' variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                         {details}
                     </Card.Text>
 
-                    <Link>
-                        <Button className='ms-4' variant="primary">Checkout</Button>
-                    </Link>
+                    <div className='cart-footer'>
+                        <Link to='/'>
+                            <Button className='ms-2' variant="primary">Back To Home</Button>
+                        </Link>
+                        <div>
+                            <Image className='images-design' src={author} alt="" />
+                        </div>
+                    </div>
                 </Card.Body>
             </Card>
         </div >

@@ -8,7 +8,7 @@ import './News.css'
 
 const News = ({ oneNews }) => {
     const { name, img, details } = oneNews;
-    console.log(oneNews)
+    // console.log(oneNews)
     return (
         <div className='details-cart'>
             <Card style={{ width: '350px' }}>

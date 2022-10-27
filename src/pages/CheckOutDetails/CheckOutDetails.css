@@ -1,0 +1,24 @@
+.cart-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.full-photo {
+    height: 250px;
+}
+
+
+.images-design {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

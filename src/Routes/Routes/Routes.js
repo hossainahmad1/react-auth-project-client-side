@@ -20,8 +20,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        // path: '/',
-        // element: <Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -66,11 +65,11 @@ export const router = createBrowserRouter([
                 element: <RightSideRoute></RightSideRoute>,
                 loader: () => fetch('http://localhost:5000/news')
             },
-            // {
-            //     path: '/checkoutdetails/:id',
-            //     element: <CheckOutDetails></CheckOutDetails>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
-            // }
+            {
+                path: '/checkout',
+                element: <CheckOut></CheckOut>,
+                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+            }
         ]
     }
 ])

@@ -16,7 +16,7 @@ const RightSideRoute = () => {
 
     return (
         <div>
-            <div className='cart-design'>
+            <div className= ' cart-design'>
                 {
                     data.map(oneData => <DetailsCart
                         key={oneData.id}

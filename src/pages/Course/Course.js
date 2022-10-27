@@ -8,7 +8,7 @@ const Course = () => {
     return (
         <Container>
             <Row>
-                <Col lg='2'>
+                <Col lg='2' >
                     <LeftSideRoute></LeftSideRoute>
                 </Col>
                 <Col lg='10'>
